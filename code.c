@@ -16,7 +16,8 @@ const float INCH_TO_CM = 0.0343;
 // variables
 int servoAngle = 0;
 int sleepTime = 100;
-float duration, distance;
+float duration;
+float distance;
 
 Servo myServo;
 
@@ -33,9 +34,9 @@ void loop() {
     sleepTime = 100;
     myServo.write(servoAngle); // Setting servo to 0 degrees
     digitalWrite(TRIG_PIN, LOW);
-	delay(sleepTime);
+	  delay(sleepTime);
     digitalWrite(TRIG_PIN, HIGH);
-	delay(sleepTime);
+	  delay(sleepTime);
     digitalWrite(TRIG_PIN, LOW);
     duration = pulseIn(ECHO_PIN, HIGH);
     distance = (duration * INCH_TO_CM)/2; // convert distance in inches to cm
